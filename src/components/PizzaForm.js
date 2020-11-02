@@ -18,15 +18,15 @@ class PizzaForm extends Component {
   render () {
     
     return(
-      <div className="form-row" onChange={this.changeHandler}>
+      <div className="form-row" >
         <div className="col-5">
-            <input name="topping"  type="text" className="form-control" placeholder="Pizza Topping" value={
+            <input name="topping"  onChange={this.changeHandler} type="text" className="form-control" placeholder="Pizza Topping" value={
                 //Pizza Topping Should Go Here
                 this.props.currentPizza.topping
               }/>
         </div>
         <div className="col">
-          <select name='size' value={this.props.currentPizza.size} className="form-control">
+          <select name='size' onChange={this.changeHandler} value={this.props.currentPizza.size} className="form-control">
             <option value="Small">Small</option>
             <option value="Medium">Medium</option>
             <option value="Large">Large</option>
@@ -34,13 +34,13 @@ class PizzaForm extends Component {
         </div>
         <div className="col">
           <div className="form-check">
-            <input className="form-check-input" type="radio" value="Vegetarian" checked={this.props.currentPizza.vegetarian ? true : false}/>
+            <input className="form-check-input" onChange={this.changeHandler} type="radio" value="Vegetarian" checked={this.props.currentPizza.vegetarian ? true : false}/>
             <label className="form-check-label">
               Vegetarian
             </label>
           </div>
           <div className="form-check">
-            <input className="form-check-input" type="radio" value="Not Vegetarian" checked={this.props.currentPizza.vegetarian ? false : true}/>
+            <input className="form-check-input" onChange={this.changeHandler} type="radio" value="Not Vegetarian" checked={this.props.currentPizza.vegetarian ? false : true}/>
             <label className="form-check-label">
               Not Vegetarian
             </label>
